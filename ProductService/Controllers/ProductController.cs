@@ -28,7 +28,7 @@ namespace ProductService.Controllers
         {
             _context.Products.Add(product);
             _context.SaveChanges();
-            return Ok(product);
+            return Ok(null.ToString());
         }
 
 
