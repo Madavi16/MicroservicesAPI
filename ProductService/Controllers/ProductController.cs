@@ -33,19 +33,19 @@ namespace ProductService.Controllers
 
 
 
-        //[HttpPut("{id}")]
-        //public IActionResult Update(int id, Product updated)
-        //{
-        //    var existingProd = _context.Products.Find(id);
-        //    if (existingProd == null) return NotFound();
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, Product updated)
+        {
+            var existingProd = _context.Products.Find(id);
+            if (existingProd == null) return NotFound();
 
-        //    existingProd.Name = updated.Name;
-        //    existingProd.Price = updated.Price;
+            existingProd.Name = updated.Name;
+            existingProd.Price = updated.Price;
 
-        //    _context.SaveChanges();
-        //    return Ok(existingProd);
+            _context.SaveChanges();
+            return Ok(existingProd);
 
-        //}
+        }
 
 
 
