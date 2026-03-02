@@ -23,13 +23,13 @@ namespace ProductService.Controllers
 
 
 
-        //[HttpPost]
-        //public IActionResult Create(Product product)
-        //{
-        //    _context.Products.Add(product);
-        //    _context.SaveChanges();
-        //    return Ok(product);
-        //}
+        [HttpPost]
+        public IActionResult Create(Product product)
+        {
+            _context.Products.Add(product);
+            _context.SaveChanges();
+            return Ok(product);
+        }
 
 
 
