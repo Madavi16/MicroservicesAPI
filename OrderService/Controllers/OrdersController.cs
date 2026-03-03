@@ -30,5 +30,12 @@ namespace OrderService.Controllers
             _context.SaveChanges();
             return Ok(order);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult GetOrdersById(int id)
+        {
+            var orders = _context.Orders.Where(orders => orders.OrderId == id).ToList();
+            return Ok(orders);
+        }
     }
 }
