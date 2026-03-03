@@ -26,6 +26,9 @@ namespace ProductService.Controllers
         [HttpPost]
         public IActionResult Create(Product product)
         {
+            if (product.Price <= 0)
+                return BadRequest("Price must be greater than zero.");
+
             _context.Products.Add(product);
             _context.SaveChanges();
             return Ok(product);
@@ -47,7 +50,6 @@ namespace ProductService.Controllers
 
         }
 
-
-
+       
     }
 }
