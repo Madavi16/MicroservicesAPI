@@ -29,6 +29,11 @@ namespace ProductService.Controllers
             if (product.Price <= 0)
                 return BadRequest("Price must be greater than zero.");
 
+            if(product.Name.Length<3)
+            {
+                return BadRequest("PRoduct name too short!");
+            }
+
             _context.Products.Add(product);
             _context.SaveChanges();
             return Ok(product);
